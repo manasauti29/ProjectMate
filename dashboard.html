@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - ProjectMate</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="script.js" defer></script>
+</head>
+<body class="bg-gray-50 flex flex-col min-h-screen">
+
+    <!-- Navbar -->
+    <header class="fixed top-0 left-0 w-full z-50 bg-white shadow-md">
+        <nav class="flex items-center justify-between p-3 lg:px-6">
+            <div class="flex lg:flex-1">
+                <a href="index.html" class="-m-1.5 p-1.5">
+                    <img class="h-10 w-auto" src="assets/logo.png" alt="Logo">
+                </a>
+                <span class="text-xl font-bold text-gray-900 ml-4">ProjectMate</span>
+            </div>
+            <div class="hidden lg:flex lg:gap-x-8">
+                <a href="about.html" class="text-base font-medium text-gray-900 hover:text-indigo-600">Perks</a>
+                <a href="search-teammates.html" class="text-base font-medium text-gray-900 hover:text-indigo-600">Search for Teammates</a>
+                <a href="post-project.html" class="text-base font-medium text-gray-900 hover:text-indigo-600">Post a Project</a>
+                <a href="login.html" class="text-base font-medium text-gray-900 hover:text-indigo-600">Login</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow container mx-auto py-24 px-6">
+        <!-- Welcome Message -->
+        <h2 class="text-3xl font-bold text-gray-700 mb-6">Welcome, <span id="user-name"></span>!</h2>
+
+        <!-- Dashboard Buttons -->
+        <div class="mb-8 space-y-4 md:space-y-0 md:space-x-6 md:flex">
+            <a href="post-project.html" class="bg-teal-500 text-white px-6 py-3 rounded-lg shadow-md hover:bg-teal-600">
+                Post New Project
+            </a>
+            <a href="search-teammates.html" class="bg-teal-500 text-white px-6 py-3 rounded-lg shadow-md hover:bg-teal-600">
+                Search for Teammates
+            </a>
+        </div>
+
+        <!-- User's Projects Section -->
+        <h3 class="text-2xl font-semibold text-gray-700 mb-4">Your Projects</h3>
+        <div id="projects-list" class="space-y-6">
+            <!-- User projects will be dynamically populated here -->
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-4 text-center mt-auto">
+        <p class="text-sm">&copy; 2024 ProjectMate. All rights reserved.</p>
+    </footer>
+
+    <script>
+        window.onload = () => {
+            const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+            const userName = document.getElementById('user-name');
+            const projectsList = document.getElementById('projects-list');
+
+            if (currentUser) {
+                // Set the user's name in the welcome message
+                userName.innerText = currentUser.name;
+
+                // Retrieve user projects from localStorage or show a placeholder
+                const projects = JSON.parse(localStorage.getItem('projects')) || [];
+                if (projects.length > 0) {
+                    projects.forEach(project => {
+                        projectsList.innerHTML += `
+                            <div class="bg-white shadow-md rounded-lg p-6">
+                                <h3 class="text-xl font-semibold text-gray-800">${project.title}</h3>
+                                <p class="text-sm text-gray-600 mt-2">Required Skills: ${project.requiredSkills.join(', ')}</p>
+                            </div>
+                        `;
+                    });
+                } else {
+                    projectsList.innerHTML = '<p class="text-gray-600">You have no projects posted yet.</p>';
+                }
+            } else {
+                // Redirect to login page if no user is logged in
+                window.location.href = 'login.html';
+            }
+
+            // Handle logout
+            document.getElementById('logout').addEventListener('click', () => {
+                localStorage.removeItem('currentUser');
+                window.location.href = 'login.html';
+            });
+        };
+    </script>
+</body>
+</html>
+    

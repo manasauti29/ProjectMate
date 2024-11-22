@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search for Teammates - Group Formation Platform</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="search-teammates.js" defer></script>
+</head>
+
+<body class="bg-gray-50">
+
+    <!-- Navbar -->
+    <header class="fixed top-0 left-0 w-full z-50 bg-white shadow-md">
+        <nav class="flex items-center justify-between p-3 lg:px-6">
+            <div class="flex lg:flex-1">
+                <a href="index.html" class="-m-1.5 p-1.5">
+                    <img class="h-10 w-auto" src="assets/logo.png" alt="Logo">
+                </a>
+                <span class="text-xl font-bold text-gray-900 ml-4">ProjectMate</span>
+            </div>
+            <div class="hidden lg:flex lg:gap-x-8">
+                <a href="about.html" class="text-base font-medium text-gray-900 hover:text-indigo-600">Perks</a>
+                <a href="search-teammates.html" class="text-base font-medium text-gray-900 hover:text-indigo-600">Search for Teammates</a>
+                <a href="post-project.html" class="text-base font-medium text-gray-900 hover:text-indigo-600">Post a Project</a>
+                <a href="login.html" class="text-base font-medium text-gray-900 hover:text-indigo-600">Login</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Search Teammates Section -->
+    <section class="py-16 mt-20 bg-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl font-semibold text-gray-900 mb-6">Search for Teammates</h2>
+            <p class="text-lg text-gray-600 mb-8">Find teammates who complement your skills and interests.</p>
+
+            <!-- Search Form -->
+            <div class="flex justify-center items-center mb-6">
+                <input id="search-skills" type="text" class="w-1/2 p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500" placeholder="Search by skills">
+                <button onclick="searchTeamMembers()" class="bg-indigo-600 text-white p-3 rounded-md shadow-md hover:bg-indigo-500 focus:ring-2 focus:ring-indigo-500 focus:outline-none">
+                    Search
+                </button>
+            </div>
+
+            <!-- Search Results -->
+            <div id="team-results" class="mt-6 text-left"></div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto text-center">
+            <p class="text-sm">&copy; 2024 Group Formation Platform. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>

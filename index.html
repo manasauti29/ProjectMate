@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Group Formation Platform</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="script.js" defer></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            scroll-behavior: smooth;
+        }
+        .hero-section {
+            background-image: url('bg1.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            min-height: 100vh;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+
+    <!-- Navbar -->
+    <header class="fixed top-0 left-0 w-full z-50 bg-white shadow-md">
+        <nav class="flex items-center justify-between p-3 lg:px-6">
+            <div class="flex lg:flex-1">
+                <a href="index.html" class="-m-1.5 p-1.5">
+                    <img class="h-10 w-auto" src="assets/logo.png" alt="Logo">
+                </a>
+                <span class="text-xl font-bold text-gray-900 ml-4">ProjectMate</span>
+            </div>
+            <div class="hidden lg:flex lg:gap-x-8">
+                <a href="about.html" class="text-base font-medium text-gray-900 hover:text-indigo-600">Perks</a>
+                <a href="search-teammates.html" class="text-base font-medium text-gray-900 hover:text-indigo-600">Search for Teammates</a>
+                <a href="post-project.html" class="text-base font-medium text-gray-900 hover:text-indigo-600">Post a Project</a>
+                <a href="login.html" class="text-base font-medium text-gray-900 hover:text-indigo-600">Login</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section flex items-center">
+        <div class="container mx-auto px-6">
+            <div class="max-w-sm text-left bg-white bg-opacity-70 p-6 rounded-lg shadow-lg">
+                <h2 class="text-4xl sm:text-5xl font-extrabold leading-tight mb-6">
+                    Find Your Perfect Project Teammates
+                </h2>
+                <p class="text-lg sm:text-xl mb-8">
+                    Connect with students who share your interests, skills, and vision to collaborate and build amazing projects together.
+                </p>
+                <div class="flex gap-4">
+                    <a href="login.html"
+                        class="inline-block bg-indigo-600 text-white font-semibold py-3 px-6 rounded-full text-lg shadow-md hover:bg-indigo-500 transition duration-300">
+                        Login
+                    </a>
+                    <a href="register.html"
+                        class="inline-block bg-teal-600 text-white font-semibold py-3 px-6 rounded-full text-lg shadow-md hover:bg-teal-500 transition duration-300">
+                        Register
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Perks Section -->
+    <section id="perks" class="py-16 bg-gray-100">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-8">Why Choose Our Platform?</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Perk 1 -->
+                <div class="bg-white rounded-lg shadow-lg p-6 text-center">
+                    <img src="assets/collaboration.png" alt="Collaboration" class="h-16 mx-auto mb-4">
+                    <h3 class="text-xl font-semibold text-gray-700">Seamless Collaboration</h3>
+                    <p class="text-gray-600 mt-2">Easily connect with like-minded peers for project success.</p>
+                </div>
+                <!-- Perk 2 -->
+                <div class="bg-white rounded-lg shadow-lg p-6 text-center">
+                    <img src="assets/skills.png" alt="Skill Matching" class="h-16 mx-auto mb-4">
+                    <h3 class="text-xl font-semibold text-gray-700">Skill-Based Matches</h3>
+                    <p class="text-gray-600 mt-2">Find teammates with the exact skills you need.</p>
+                </div>
+                <!-- Perk 3 -->
+                <div class="bg-white rounded-lg shadow-lg p-6 text-center">
+                    <img src="assets/reviews.png" alt="Feedback" class="h-16 mx-auto mb-4">
+                    <h3 class="text-xl font-semibold text-gray-700">Peer Feedback</h3>
+                    <p class="text-gray-600 mt-2">Evaluate and improve teamwork through constructive feedback.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-4">
+        <div class="container mx-auto text-center">
+            <p class="text-sm">&copy; 2024 Group Formation Platform. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
